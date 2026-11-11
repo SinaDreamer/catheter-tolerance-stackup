@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.idea/
+*.pdf
+*_results.csv
+*_mc.csv
+legacy/

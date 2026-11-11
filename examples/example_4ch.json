@@ -1,0 +1,330 @@
+{
+  "format": "catheter-stackup",
+  "version": 3,
+  "name": "Example shaft — central lumen + 4× PI channels",
+  "notes": "",
+  "settings": {
+    "units": "in",
+    "method": "wc",
+    "wc_mode": "extreme",
+    "k_sigma": 3.0,
+    "mrss_factor": 1.5,
+    "mc_enabled": true,
+    "mc_n": 20000,
+    "mc_sampling": "lhs",
+    "mc_seed": 12345,
+    "default_dist": "normal",
+    "truncate": true,
+    "cap_method": "normal",
+    "reflow_model": "exact",
+    "subtract_channels": true
+  },
+  "acceptance": {
+    "od_usl": 0.062,
+    "od_lsl": 0.0,
+    "min_lumen": 0.0,
+    "min_web": 0.001,
+    "min_cover": 0.002,
+    "ecc": {
+      "nom": 0.0,
+      "tp": 0.0,
+      "tm": 0.0,
+      "dist": "default"
+    }
+  },
+  "layers": [
+    {
+      "type": "mandrel",
+      "uid": "09b74e",
+      "name": "Mandrel / core",
+      "dims": {
+        "od": {
+          "nom": 0.02,
+          "tp": 0.0003,
+          "tm": 0.0003,
+          "dist": "default"
+        }
+      },
+      "options": {}
+    },
+    {
+      "type": "liner",
+      "uid": "2bd934",
+      "name": "PTFE liner",
+      "dims": {
+        "wall": {
+          "nom": 0.0015,
+          "tp": 0.0003,
+          "tm": 0.0003,
+          "dist": "default"
+        }
+      },
+      "options": {}
+    },
+    {
+      "type": "braid",
+      "uid": "69819b",
+      "name": "SS braid",
+      "dims": {
+        "dia": {
+          "nom": 0.0015,
+          "tp": 0.0001,
+          "tm": 0.0001,
+          "dist": "default"
+        },
+        "thick": {
+          "nom": 0.0012,
+          "tp": 0.0001,
+          "tm": 0.0001,
+          "dist": "default"
+        },
+        "width": {
+          "nom": 0.004,
+          "tp": 0.0003,
+          "tm": 0.0003,
+          "dist": "default"
+        }
+      },
+      "options": {
+        "shape": "flat",
+        "stack": 2,
+        "carriers": 16,
+        "ppi": 80.0
+      }
+    },
+    {
+      "type": "channels",
+      "uid": "8c3009",
+      "name": "PI pull-wire channels",
+      "dims": {
+        "gap": {
+          "nom": 0.0,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        }
+      },
+      "options": {
+        "radius_mode": "auto"
+      },
+      "channels": [
+        {
+          "label": "PI1",
+          "kind": "lined",
+          "id": {
+            "nom": 0.005,
+            "tp": 0.0004,
+            "tm": 0.0004,
+            "dist": "default"
+          },
+          "wall": {
+            "nom": 0.0012,
+            "tp": 0.0002,
+            "tm": 0.0002,
+            "dist": "default"
+          },
+          "angle": {
+            "nom": 45.0,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          },
+          "radius": {
+            "nom": 0.016,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          }
+        },
+        {
+          "label": "PI2",
+          "kind": "lined",
+          "id": {
+            "nom": 0.005,
+            "tp": 0.0004,
+            "tm": 0.0004,
+            "dist": "default"
+          },
+          "wall": {
+            "nom": 0.0012,
+            "tp": 0.0002,
+            "tm": 0.0002,
+            "dist": "default"
+          },
+          "angle": {
+            "nom": 135.0,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          },
+          "radius": {
+            "nom": 0.016,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          }
+        },
+        {
+          "label": "PI3",
+          "kind": "lined",
+          "id": {
+            "nom": 0.005,
+            "tp": 0.0004,
+            "tm": 0.0004,
+            "dist": "default"
+          },
+          "wall": {
+            "nom": 0.0012,
+            "tp": 0.0002,
+            "tm": 0.0002,
+            "dist": "default"
+          },
+          "angle": {
+            "nom": 225.0,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          },
+          "radius": {
+            "nom": 0.016,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          }
+        },
+        {
+          "label": "PI4",
+          "kind": "lined",
+          "id": {
+            "nom": 0.005,
+            "tp": 0.0004,
+            "tm": 0.0004,
+            "dist": "default"
+          },
+          "wall": {
+            "nom": 0.0012,
+            "tp": 0.0002,
+            "tm": 0.0002,
+            "dist": "default"
+          },
+          "angle": {
+            "nom": 315.0,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          },
+          "radius": {
+            "nom": 0.016,
+            "tp": 0.0,
+            "tm": 0.0,
+            "dist": "default"
+          }
+        }
+      ]
+    },
+    {
+      "type": "reflow",
+      "uid": "de3049",
+      "name": "Mid Pebax (tie)",
+      "dims": {
+        "id": {
+          "nom": 0.03,
+          "tp": 0.0006,
+          "tm": 0.0006,
+          "dist": "default"
+        },
+        "od": {
+          "nom": 0.044,
+          "tp": 0.0006,
+          "tm": 0.0006,
+          "dist": "default"
+        },
+        "pen": {
+          "nom": 0.0004,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        },
+        "clr": {
+          "nom": 0.0,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        }
+      },
+      "options": {
+        "check_fit": true,
+        "model": "global"
+      }
+    },
+    {
+      "type": "reflow",
+      "uid": "91af78",
+      "name": "Outer Pebax jacket",
+      "dims": {
+        "id": {
+          "nom": 0.056,
+          "tp": 0.0006,
+          "tm": 0.0006,
+          "dist": "default"
+        },
+        "od": {
+          "nom": 0.066,
+          "tp": 0.0006,
+          "tm": 0.0006,
+          "dist": "default"
+        },
+        "pen": {
+          "nom": 0.0004,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        },
+        "clr": {
+          "nom": 0.0,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        }
+      },
+      "options": {
+        "check_fit": true,
+        "model": "global"
+      }
+    },
+    {
+      "type": "heatshrink",
+      "uid": "29cb46",
+      "name": "FEP heat shrink",
+      "dims": {
+        "exp_id": {
+          "nom": 0.078,
+          "tp": 0.0012,
+          "tm": 0.0012,
+          "dist": "default"
+        },
+        "rec_id": {
+          "nom": 0.047,
+          "tp": 0.0012,
+          "tm": 0.0012,
+          "dist": "default"
+        },
+        "rec_wall": {
+          "nom": 0.007,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        },
+        "clr": {
+          "nom": 0.0035,
+          "tp": 0.0,
+          "tm": 0.0,
+          "dist": "default"
+        }
+      },
+      "options": {
+        "min_ratio": 1.2
+      }
+    }
+  ]
+}
